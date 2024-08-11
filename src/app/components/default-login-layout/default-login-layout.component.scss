@@ -1,0 +1,95 @@
+@import "../../../styles/variables";
+
+main {
+  display: flex;
+  flex-direction: row; // O conteúdo será exibido em linha (um ao lado do outro)
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column; // O conteúdo será exibido em coluna (um abaixo do outro)
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.main-section {
+  gap: 8px;
+  flex-grow: 1; // Esta propriedade faz com que o elemento ocupe todo o espaço disponível
+  background-color: $gray-bg;
+}
+
+.form-section {
+  flex-grow: 0.3; // Esta propriedade faz com que o elemento ocupe 30% do espaço disponível
+  padding: 0 35px;
+
+  img {
+    margin-bottom: 45px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 45px;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column; // O conteúdo será exibido em coluna (um abaixo do outro)
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+
+      font-size: 14px;
+      color: $gray-bg;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      div {
+        flex-grow: 1;
+        height: 2px;
+        background-color: $gray-bg;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      background: transparent;
+      padding: 12px 24px;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      // O seletor & faz referência butão com a classe primary
+      &.btn-primary {
+        background-color: $primary-color;
+        color: white;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      &.btn-secondary {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
